@@ -1,6 +1,8 @@
 {
   "author": "Twitch Interactive, Inc.",
   "dependencies": {
+    "@octokit/rest": "^15.8.1",
+    "ejs": "^2.6.1",
     "express": "^4.15.4"
   },
   "description": "Provides a simple starting point to create and locally develop your Twitch extension.",

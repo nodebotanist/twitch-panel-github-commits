@@ -10,8 +10,11 @@ or in the "license" file accompanying this file. This file is distributed on an 
 const express = require('express');
 const fs = require('fs');
 const https = require('https');
+const octokit = require('@octokit/rest')()
 
 const app = express();
+
+app.set('view engine', 'ejs')
 
 app.use((req, res, next) => {
   console.log('Got request', req.path, req.method);
@@ -20,6 +23,18 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   return next();
 });
+
+app.get('/panel.html', (req, res) => {
+  octokit.search.commits({
+    q: "author-name=nodebotanist",
+    per_page: 5, 
+    page: 1
+  }, (error, result) => {
+    res.render('./panel', {
+      commits: result
+    })  
+  })
+})
 
 app.use(express.static('../frontend'))
 
