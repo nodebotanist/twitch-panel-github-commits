@@ -26,12 +26,15 @@ app.use((req, res, next) => {
 
 app.get('/panel.html', (req, res) => {
   octokit.search.commits({
-    q: "author-name=nodebotanist",
-    per_page: 5, 
+    q: "author:nodebotanist",
+    sort: 'author-date',
+    order: 'desc',
+    per_page: 7, 
     page: 1
   }, (error, result) => {
+    console.log(result);
     res.render('./panel', {
-      commits: result
+      commits: result.data.items
     })  
   })
 })
