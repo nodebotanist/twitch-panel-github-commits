@@ -14,9 +14,54 @@ or in the "license" file accompanying this file. This file is distributed on an 
 
 */
 
-body {
-	font: 12px arial, sans-serif;
+* {
+  letter-spacing: 0em;
+  box-sizing: border-box;
+  font-family: 'Source Code Pro', monospace;
 }
-div {
-	margin: 0px;
+
+body {
+  background-color: #333;
+}
+
+.title {
+  padding: .5rem;
+  border-bottom: 1px dotted rgb(223, 117, 20);
+}
+
+.title h1 {
+  margin: 0rem;
+  color: rgb(28, 184, 65);
+  font-size: 2rem;
+  font-family: 'VT323', monospace;
+}
+
+ul {
+  list-style-type: none;
+  padding: .5rem;
+}
+
+li {
+  font-size: .7rem;
+  color: #ccc;
+}
+
+li a {
+  text-decoration: none;
+}
+
+li .commit-message {
+  color: #0078e7;
+}
+
+li .commit-message:hover {
+  color: rgb(66, 184, 221);
+}
+
+li .commit-repo {
+  color: rgb(66, 184, 221);
+}
+
+li .commit-repo:hover {
+  color: #0078e7;
 }

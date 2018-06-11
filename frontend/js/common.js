@@ -17,12 +17,12 @@ or in the "license" file accompanying this file. This file is distributed on an 
 if(window.Twitch.ext) {
 
   window.Twitch.ext.onAuthorized(function(auth) {
-    console.log(auth);
+    console.log('Auth: ', auth);
   });
 
   window.Twitch.ext.onContext(function(context, contextFields) {
-    console.log(context);
-    console.log(contextFields);
+    console.log('Context: ', context);
+    console.log('Context Fields: ', contextFields);
   });
   
   window.Twitch.ext.onError(function(err) {
